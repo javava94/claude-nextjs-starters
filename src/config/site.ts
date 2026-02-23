@@ -27,7 +27,7 @@ export const dashboardNav: NavGroup[] = [
     items: [
       { title: "대시보드", href: "/dashboard", icon: LayoutDashboard },
       { title: "분석", href: "/dashboard", icon: BarChart3, badge: "곧 출시" },
-      { title: "사용자", href: "/dashboard", icon: Users },
+      { title: "사용자", href: "/dashboard/users", icon: Users },
       { title: "문서", href: "/dashboard", icon: FileText },
     ],
   },
