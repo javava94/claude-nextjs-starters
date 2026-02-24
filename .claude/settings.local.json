@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(head:*)",
+      "Bash(cd \"C:/Users/javav/workspace/courses/claude-nextjs-starters\" && npx shadcn@latest search @shadcn 2>/dev/null | python3 -c \"\nimport json, sys\ndata = json.load\\(sys.stdin\\)\nui_items = [item for item in data['items'] if item['type'] == 'registry:ui']\nfor item in ui_items:\n    print\\(item['name']\\)\n\" 2>/dev/null)",
+      "Bash(node:*)",
+      "WebSearch",
+      "mcp__playwright",
+      "Bash(cd:*)",
+      "Bash(cd /c/Users/javav/workspace/courses/claude-nextjs-starters && npm run build 2>&1)",
+      "Bash(cd /c/Users/javav/workspace/courses/claude-nextjs-starters && rm -rf .next && npm run build 2>&1)",
+      "Bash(cd /c/Users/javav/workspace/courses/claude-nextjs-starters && claude mcp add playwright -- npx @playwright/mcp@latest 2>&1)",
+      "Bash(curl:*)",
+      "Bash(cd C:\\\\Users\\\\javav\\\\workspace\\\\courses\\\\claude-nextjs-starters:*)",
+      "Bash(claude:*)"
+    ]
+  },
+  "enabledMcpServers": [
+    "mcp_playwright"
+  ],
+  "enableAllMcpServers": true,
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node C:/Users/javav/.claude/hooks/slack-notify.mjs",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node C:/Users/javav/.claude/hooks/slack-notify.mjs",
+            "timeout": 10,
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
+}
